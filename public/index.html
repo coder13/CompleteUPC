@@ -14,18 +14,21 @@
       list-style: none;
     }
 
-    input {
-      padding: 0px;
+    .box-1 {
+      margin: .5em;
+      box-sizing: border-box;
     }
   </style>
 </head>
 <body>
   <div id="app" class='pure-g'>
     <div class='pure-u-1'>
-      <input id='main' class='pure-u-1-1' type='tel' v-model="upc" maxlength="12" @keyup.enter='complete' autofocus/>
+      <div class='box-1'>
+        <input id='main' class='pure-u-1-1' type='tel' v-model="upc" maxlength="12" @keyup.enter='complete' autofocus/>
+      </div>
     </div>
-    <div class='pure-u-24'>
-      <ul class='pure-u-23-24'>
+    <div class='pure-u-1'>
+      <ul class='pure-u-1-1'>
         <li v-for='upc in suggestions'>
           {{ `${upc.slice(0,1)} ${upc.slice(1,6)}  ${upc.slice(6,11)} ${upc.slice(11,12)}` }}
         </li>
